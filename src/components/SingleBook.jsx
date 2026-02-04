@@ -1,11 +1,21 @@
 import { Component } from "react";
 
 class SingleBook extends Component {
+  state = {
+    selected: false,
+  };
+
   render() {
     const { asin, img, title, price } = this.props;
 
     return (
-      <div key={asin} className="mb-3 card col-12 col-md-5 col-lg-3 col-xxl-2 p-0">
+      <div
+        key={asin}
+        onClick={() => {
+          this.setState({ selected: !this.state.selected });
+        }}
+        className={`mb-3 card col-12 col-md-5 col-lg-3 col-xxl-2 p-0 ${this.state.selected ? "border border-5 border-danger" : ""}`}
+      >
         <img src={img} className="card-img-top" alt="book_cover" />
         <div className="card-body d-flex flex-column justify-content-between">
           <div>

@@ -4,13 +4,15 @@ import MyNav from "./components/MyNav.jsx";
 import MyFooter from "./components/MyFooter.jsx";
 import Welcome from "./components/Welcome.jsx";
 import AllTheBooks from "./components/AllTheBooks.jsx";
+import fantasyBooks from "./data/fantasy.json";
+import BookList from "./components/BookList.jsx";
 
 function App() {
   return (
     <>
       <MyNav title="EpiBook" />
       <Welcome />
-      <AllTheBooks />
+      <BookList books={fantasyBooks} />
       <MyFooter />
     </>
   );
